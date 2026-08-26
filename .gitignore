@@ -1,0 +1,7 @@
+node_modules
+dist
+.DS_Store
+
+# Private source material used to prepare portfolio copy. Do not publish.
+resume.md
+portfolio.md
