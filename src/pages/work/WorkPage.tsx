@@ -1,14 +1,13 @@
-// src/portfolio/WorkPage.tsx
-
-import { useEffect, useState, type JSX } from "react";
+import { useEffect, useRef, useState, type JSX } from "react";
 import {
   projects,
   additionalProjects,
   type Project,
   type AdditionalProject,
-} from "./data";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
+} from "../../content/portfolio";
+import { Footer } from "../../components/layout/Footer";
+import { Header } from "../../components/layout/Header";
+import "./WorkPage.css";
 
 type SelectedProject =
   | {
@@ -28,11 +27,49 @@ function ProjectModal({
   onClose: () => void;
 }): JSX.Element {
   const { project } = selected;
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
+    const previouslyFocused =
+      document.activeElement instanceof HTMLElement ? document.activeElement : null;
+
+    closeButtonRef.current?.focus();
+
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         onClose();
+        return;
+      }
+
+      if (event.key !== "Tab") {
+        return;
+      }
+
+      const focusableElements = Array.from(
+        dialogRef.current?.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ) ?? [],
+      );
+
+      if (focusableElements.length === 0) {
+        event.preventDefault();
+        return;
+      }
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements.at(-1);
+
+      if (!lastElement) {
+        return;
+      }
+
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
       }
     };
 
@@ -44,6 +81,7 @@ function ProjectModal({
     return () => {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", handleKeyDown);
+      previouslyFocused?.focus();
     };
   }, [onClose]);
 
@@ -57,12 +95,15 @@ function ProjectModal({
       }}
     >
       <div
+        ref={dialogRef}
         className="project-modal"
         role="dialog"
         aria-modal="true"
         aria-labelledby="project-modal-title"
+        tabIndex={-1}
       >
         <button
+          ref={closeButtonRef}
           type="button"
           className="project-modal-close"
           onClick={onClose}
@@ -209,7 +250,7 @@ export function WorkPage(): JSX.Element {
         <section className="work-page-hero section-shell">
           <p className="eyebrow">Selected work</p>
 
-          <h1>
+          <h1 id="hero-title" className="hero-title">
             Engineering stories,
             <br />
             <em>not feature lists.</em>
@@ -242,7 +283,10 @@ export function WorkPage(): JSX.Element {
           <div>
             <p className="eyebrow">Additional engineering work</p>
 
-            <h2>More systems with meaningful constraints.</h2>
+            <h2 className="hero-title">
+              More systems with <br />
+              <em>meaningful constraints.</em>
+            </h2>
           </div>
 
           <div className="additional-project-list">

@@ -1,10 +1,9 @@
-// src/portfolio/ExperiencePage.tsx
-
 import type { JSX } from "react";
 import { Link } from "react-router-dom";
-import { experience } from "./data";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
+import { experience } from "../../content/portfolio";
+import { Footer } from "../../components/layout/Footer";
+import { Header } from "../../components/layout/Header";
+import "./ExperiencePage.css";
 
 export function ExperiencePage(): JSX.Element {
   return (
@@ -19,10 +18,10 @@ export function ExperiencePage(): JSX.Element {
         <section className="experience-page-hero section-shell">
           <p className="eyebrow">Experience</p>
 
-          <h1>
-            Building products through
+          <h1 id="hero-title" className="hero-title">
+            5+ years of building,
             <br />
-            <em>real-world constraints.</em>
+            <em>learning & shipping.</em>
           </h1>
 
           <p className="experience-page-intro">
@@ -57,7 +56,7 @@ export function ExperiencePage(): JSX.Element {
 
           <h2>Want to see what I’ve built?</h2>
 
-          <Link className="button button-primary" to="/">
+          <Link className="button button-primary" to="/work">
             View selected work
             <span aria-hidden="true">↗</span>
           </Link>

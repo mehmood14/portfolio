@@ -1,0 +1,89 @@
+/* Experience page */
+
+.experience-page {
+  padding-top: 5.15rem;
+}
+
+.experience-page-hero {
+  padding-block: clamp(5rem, 10vw, 9rem);
+}
+
+.experience-page-hero h1 {
+  max-width: 950px;
+
+  margin-bottom: 3rem;
+}
+
+.experience-page-intro {
+  max-width: 680px;
+
+  margin-left: auto;
+
+  color: var(--ink-soft);
+
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  line-height: 1.7;
+}
+
+.experience-page-list {
+  border-top: 1px solid var(--line);
+}
+
+.experience-page-item {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.35fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 5rem);
+
+  padding: 3rem 0;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.experience-page-period {
+  margin: 0;
+
+  color: var(--accent-ink);
+
+  font-size: 0.75rem;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.experience-page-item h2 {
+  margin-bottom: 0.35rem;
+
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  line-height: 1;
+}
+
+.experience-page-company {
+  margin-bottom: 1.4rem;
+
+  color: var(--ink);
+
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.experience-page-description {
+  max-width: 680px;
+  margin: 0;
+
+  color: var(--ink-soft);
+
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.experience-page-bottom {
+  padding-block: clamp(5rem, 10vw, 8rem);
+}
+
+.experience-page-bottom h2 {
+  max-width: 650px;
+
+  margin-bottom: 2rem;
+
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1;
+}

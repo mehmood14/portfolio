@@ -1,0 +1,205 @@
+/* Contact page */
+
+.contact-page {
+  padding-top: 5.15rem;
+}
+
+.contact-page-hero {
+  padding-block: clamp(5rem, 10vw, 9rem);
+}
+
+.contact-page-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.55fr);
+  gap: clamp(3rem, 9vw, 9rem);
+  align-items: end;
+}
+
+.contact-page-hero h1 {
+  max-width: 950px;
+
+  margin-bottom: 3rem;
+}
+
+.contact-page-intro {
+  max-width: 680px;
+
+  color: var(--ink-soft);
+
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  line-height: 1.7;
+}
+
+.contact-availability-card {
+  position: relative;
+  overflow: hidden;
+
+  padding: 1.5rem;
+
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+
+  background: color-mix(in srgb, var(--panel) 74%, var(--paper));
+
+  box-shadow: 0 1.1rem 2.6rem color-mix(in srgb, var(--ink) 7%, transparent);
+}
+
+.contact-availability-card::after {
+  position: absolute;
+  right: -2.9rem;
+  bottom: -2.9rem;
+
+  width: 7.8rem;
+  height: 7.8rem;
+
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  border-radius: 50%;
+
+  content: "";
+}
+
+.contact-availability-card .eyebrow {
+  position: relative;
+  z-index: 1;
+
+  margin-bottom: 0.75rem;
+  color: var(--accent-ink);
+}
+
+.contact-availability-card strong {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+}
+
+.contact-availability-card > p:not(.eyebrow) {
+  position: relative;
+  z-index: 1;
+
+  margin: 1rem 0 1.45rem;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
+.contact-availability-card a {
+  position: relative;
+  z-index: 1;
+
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: center;
+
+  padding-bottom: 0.2rem;
+
+  border-bottom: 1px solid var(--accent);
+
+  color: var(--accent-ink);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.contact-availability-card a:hover {
+  color: var(--accent);
+}
+
+.contact-page-details {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.65fr) minmax(0, 1.35fr);
+  gap: clamp(3rem, 10vw, 10rem);
+
+  padding-block: clamp(5rem, 10vw, 8rem);
+
+  border-top: 1px solid var(--line);
+}
+
+.contact-page-details h2 {
+  max-width: 22rem;
+  margin-bottom: 1rem;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  line-height: 1.02;
+}
+
+.contact-page-details > div:first-child > p:last-child {
+  max-width: 21rem;
+  margin-bottom: 0;
+  color: var(--ink-soft);
+  font-size: 0.87rem;
+  line-height: 1.6;
+}
+
+.contact-links {
+  border-top: 1px solid var(--line);
+}
+
+.contact-links a {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  gap: 1.5rem;
+
+  align-items: center;
+
+  padding: 1.3rem 1.1rem;
+
+  border-bottom: 1px solid var(--line);
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.contact-links a > span:first-child {
+  color: var(--accent-ink);
+
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+
+  text-transform: uppercase;
+}
+
+.contact-links strong {
+  display: block;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  font-weight: 400;
+}
+
+.contact-links small {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 650;
+}
+
+.contact-links a > span:last-child {
+  color: var(--accent);
+}
+
+.contact-links a:hover strong {
+  color: var(--accent-ink);
+}
+
+.contact-links a:hover {
+  background: color-mix(in srgb, var(--panel) 65%, transparent);
+  transform: translateX(0.35rem);
+}
+
+@media (max-width: 800px) {
+  .contact-page-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-availability-card {
+    max-width: 32rem;
+  }
+}

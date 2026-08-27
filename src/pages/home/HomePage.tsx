@@ -1,9 +1,8 @@
-// src/portfolio/HomePage.tsx
-
 import type { JSX } from "react";
 import { Link } from "react-router-dom";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
+import { Footer } from "../../components/layout/Footer";
+import { Header } from "../../components/layout/Header";
+import "./HomePage.css";
 
 function Arrow(): JSX.Element {
   return <span aria-hidden="true">↗</span>;
@@ -29,7 +28,7 @@ export function HomePage(): JSX.Element {
               Software Engineer · Frontend Focus · Stockholm, Sweden
             </p>
 
-            <h1 id="hero-title">
+            <h1 id="hero-title" className="hero-title">
               I turn complex product systems into <em>clear, reliable</em>{" "}
               experiences.
             </h1>
@@ -44,20 +43,34 @@ export function HomePage(): JSX.Element {
                 View work <Arrow />
               </Link>
 
-              <Link className="button button-secondary" to="/contact">
-                Get in touch
-              </Link>
-
               <a
-                className="button button-secondary"
+                className="hero-linkedin"
+                href="https://www.linkedin.com/in/mehmood-ul-haq"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span className="linkedin-mark" aria-hidden="true">
+                  <span>i</span>
+                  <span>n</span>
+                </span>
+
+                <span className="hero-linkedin-copy">
+                  <small>Connect on LinkedIn</small>
+                  <strong>Follow my professional journey</strong>
+                </span>
+
+                <Arrow />
+              </a>
+            </div>
+
+            <div className="hero-resources" aria-label="Contact and downloads">
+              <a
                 href="/downloads/MEHMOOD_RESUME.pdf"
                 download="MEHMOOD_RESUME.pdf"
               >
                 Résumé <DownloadIcon />
               </a>
-
               <a
-                className="button button-secondary"
                 href="/downloads/MEHMOOD_PORTFOLIO.pdf"
                 download="MEHMOOD_PORTFOLIO.pdf"
               >
@@ -67,22 +80,45 @@ export function HomePage(): JSX.Element {
           </div>
 
           <aside className="hero-aside" aria-label="Engineering principles">
-            <p className="aside-label">How I work</p>
+            <div className="hero-aside-heading">
+              <p className="aside-label">How I like to work</p>
+              <h2>
+                Good products should feel easy to use, and easy to improve.
+              </h2>
+            </div>
 
             <ol>
               <li>
                 <span>01</span>
-                Make complexity clear
+                <div>
+                  <strong>Make things easier to follow</strong>
+                  <p>
+                    When a product has a lot going on, I try to give people a
+                    clear next step.
+                  </p>
+                </div>
               </li>
 
               <li>
                 <span>02</span>
-                Build for the long term
+                <div>
+                  <strong>Don’t hide the messy bits</strong>
+                  <p>
+                    Loading, empty, and error states are part of the experience
+                    too.
+                  </p>
+                </div>
               </li>
 
               <li>
                 <span>03</span>
-                Keep things simple
+                <div>
+                  <strong>Leave it better than I found it</strong>
+                  <p>
+                    Clear code and sensible boundaries make the next change less
+                    stressful.
+                  </p>
+                </div>
               </li>
             </ol>
           </aside>

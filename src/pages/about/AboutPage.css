@@ -1,0 +1,294 @@
+/* About page */
+
+.about-person-page {
+  padding-top: 5.15rem;
+}
+
+.about-person-hero {
+  padding-block: clamp(5rem, 10vw, 9rem);
+}
+
+.about-person-hero h1 {
+  max-width: 950px;
+
+  margin-bottom: 3rem;
+}
+
+.about-person-intro {
+  max-width: 650px;
+
+  margin-left: auto;
+}
+
+.about-person-intro p {
+  font-size: clamp(1.1rem, 1.7vw, 1.3rem);
+  line-height: 1.65;
+}
+
+.about-person-intro p + p {
+  margin-top: 1.4rem;
+
+  color: var(--ink-soft);
+}
+
+.about-person-story {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.65fr) minmax(0, 1.35fr);
+  gap: clamp(3rem, 10vw, 10rem);
+
+  padding-block: clamp(5rem, 10vw, 8rem);
+
+  border-top: 1px solid var(--line);
+}
+
+.about-personal-life {
+  max-width: 680px;
+}
+
+.about-personal-life {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.about-person-bottom {
+  padding-block: clamp(5rem, 10vw, 8rem);
+
+  border-top: 1px solid var(--line);
+}
+
+.about-person-bottom h2 {
+  max-width: 650px;
+
+  margin-bottom: 2rem;
+
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1;
+}
+
+.about-person-story-heading h2 {
+  max-width: 480px;
+  margin: 0;
+
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1;
+}
+
+.about-person-story-heading h2 em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.about-person-hero {
+  padding-block: clamp(4.5rem, 9vw, 8rem);
+}
+
+.about-person-hero-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.65fr);
+  align-items: center;
+  gap: clamp(3rem, 7vw, 7rem);
+}
+
+.about-person-hero-copy {
+  min-width: 0;
+}
+
+.about-person-portrait {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--panel);
+
+  box-shadow: 1rem 1rem 0 color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.about-person-portrait::after {
+  position: absolute;
+  inset: 0;
+  border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+  pointer-events: none;
+  content: "";
+}
+
+.about-person-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-person-portrait figcaption {
+  position: absolute;
+  right: 0.85rem;
+  bottom: 0.85rem;
+
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: center;
+
+  margin: 0;
+  padding: 0.45rem 0.6rem;
+
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  color: var(--ink);
+
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+.about-person-portrait figcaption span {
+  color: var(--accent);
+  font-size: 0.65rem;
+}
+
+.about-personal-life article {
+  display: grid;
+  grid-template-columns: 2.35rem minmax(0, 1fr);
+  gap: 0.85rem;
+
+  padding: 1rem;
+
+  border: 1px solid var(--line);
+
+  background: color-mix(in srgb, var(--panel) 58%, var(--paper));
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.about-personal-life article:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+
+  box-shadow: 0 0.7rem 1.5rem color-mix(in srgb, var(--ink) 8%, transparent);
+  transform: translateY(-2px);
+}
+
+.about-personal-life article > span {
+  display: grid;
+  place-items: center;
+
+  width: 2.35rem;
+  height: 2.35rem;
+
+  border-radius: 50%;
+
+  background: var(--forest);
+  color: var(--lime);
+
+  font-size: 0.9rem;
+}
+
+.about-personal-life h3 {
+  margin: 0 0 0.25rem;
+  color: var(--ink);
+  font-size: 0.9rem;
+  letter-spacing: -0.015em;
+}
+
+.about-personal-life p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 800px) {
+  .about-person-hero-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-person-portrait {
+    width: min(100%, 440px);
+    aspect-ratio: 4 / 5;
+  }
+}
+
+.about-colleagues {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+  gap: clamp(3rem, 8vw, 8rem);
+
+  padding-block: clamp(5rem, 9vw, 8rem);
+
+  border-top: 1px solid var(--line);
+}
+
+.about-colleagues-heading h2 {
+  max-width: 480px;
+
+  margin: 0;
+
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1;
+}
+
+.about-colleagues-heading h2 em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.colleague-quotes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.colleague-quote {
+  margin: 0;
+  padding: 1.4rem;
+
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+
+  background: color-mix(in srgb, var(--panel) 45%, var(--paper));
+}
+
+.colleague-quote p {
+  max-width: 720px;
+  margin-bottom: 1.4rem;
+
+  color: var(--ink);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.05rem, 1.55vw, 1.3rem);
+  line-height: 1.42;
+  letter-spacing: -0.025em;
+}
+
+.colleague-quote footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.colleague-quote footer strong {
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.colleague-quote footer span {
+  color: var(--ink-soft);
+
+  font-size: 0.82rem;
+}
+
+@media (max-width: 800px) {
+  .about-colleagues {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-colleagues-heading h2 {
+    max-width: 100%;
+  }
+
+  .colleague-quotes {
+    grid-template-columns: 1fr;
+  }
+}
