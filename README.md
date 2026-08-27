@@ -4,6 +4,8 @@ A fast, content-first React and TypeScript portfolio designed for Vercel deploym
 
 **Live site:** [portfolio-amber-one-79.vercel.app](https://portfolio-amber-one-79.vercel.app/)
 
+<img width="1332" height="852" alt="Screenshot 2026-08-27 at 6 03 18 PM" src="https://github.com/user-attachments/assets/e22dcdf6-2fe2-4f22-805b-04e3d5887814" />
+
 ## Local development
 
 ```bash
