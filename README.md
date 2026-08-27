@@ -2,6 +2,8 @@
 
 A fast, content-first React and TypeScript portfolio designed for Vercel deployment.
 
+**Live site:** [portfolio-amber-one-79.vercel.app](https://portfolio-amber-one-79.vercel.app/)
+
 ## Local development
 
 ```bash
