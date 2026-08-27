@@ -22,7 +22,7 @@ export type Project = {
 export const projects: readonly Project[] = [
   {
     number: "01",
-    name: "Video analytics investigation",
+    name: "Video analytics",
     company: "Hive Streaming",
     kind: "Enterprise analytics · Angular + GraphQL",
     summary:
@@ -40,6 +40,8 @@ export const projects: readonly Project[] = [
       "Apollo GraphQL",
       "NestJS",
       "Highcharts",
+      "Angular Signals",
+      "Storybook",
     ],
     details: {
       overview:
@@ -94,6 +96,8 @@ export const projects: readonly Project[] = [
       "NestJS",
       "PostgreSQL",
       "Highcharts Maps",
+      "Angular Signals",
+      "Storybook",
     ],
     details: {
       overview:
@@ -148,7 +152,11 @@ export const projects: readonly Project[] = [
       "Chrome MV3",
       "Firebase",
       "REST",
-      "Server-Sent Events",
+      "Redux",
+      "Node.js",
+      "Express.js",
+      "Stripe",
+      "GCP",
     ],
     details: {
       overview:
@@ -258,7 +266,7 @@ export const additionalProjects: readonly AdditionalProject[] = [
     name: "Headless content platform",
     description:
       "Contributed to a structured CMS workflow that separates editorial updates from frontend releases, with role-aware administration and GraphQL content delivery.",
-    technologies: "Keystone, TypeScript, PostgreSQL, Prisma, GraphQL",
+    technologies: "Keystone, TypeScript, NextAuth, PostgreSQL, Prisma, GraphQL",
     details: {
       overview:
         "A headless content-management system built to let authorized editors manage structured portal content independently from frontend release cycles. The consuming product retrieves the content through GraphQL while editorial operations remain behind authenticated administration workflows.",
@@ -269,7 +277,7 @@ export const additionalProjects: readonly AdditionalProject[] = [
         "Worked with products, landing-page content, cards, tooltips, and related structured entities.",
         "Supported GraphQL-based delivery of structured content to the consuming frontend.",
         "Worked with role-based editorial access for different levels of content administration.",
-        "Integrated enterprise authentication into the editorial workflow.",
+        "Integrated enterprise authentication with NextAuth into the editorial workflow.",
         "Worked with PostgreSQL-backed persistence through the CMS data layer.",
         "Contributed to deployment-aware configuration and administration.",
         "Worked within containerized and Kubernetes-based delivery environments.",
