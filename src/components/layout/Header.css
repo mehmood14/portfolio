@@ -293,6 +293,46 @@
   text-align: left;
 }
 
+.theme-option::before {
+  display: inline-block;
+
+  width: 0.72rem;
+  height: 0.72rem;
+
+  border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  border-radius: 50%;
+
+  background: var(--theme-preview);
+  box-shadow: inset 0 0 0 2px var(--theme-preview-inner);
+
+  content: "";
+}
+
+.theme-option--light {
+  --theme-preview: #f7f6f2;
+  --theme-preview-inner: #153e35;
+}
+
+.theme-option--dark {
+  --theme-preview: #1d2a25;
+  --theme-preview-inner: #f1845c;
+}
+
+.theme-option--amber {
+  --theme-preview: #fff8ea;
+  --theme-preview-inner: #a94c28;
+}
+
+.theme-option--ocean {
+  --theme-preview: #e4f0f4;
+  --theme-preview-inner: #0b5563;
+}
+
+.theme-option--plum {
+  --theme-preview: #2a2130;
+  --theme-preview-inner: #ff9c6b;
+}
+
 .theme-menu button:hover {
   background: var(--panel);
   color: var(--ink);
@@ -367,7 +407,8 @@ main {
     top: auto;
     bottom: calc(100% + 0.6rem);
 
-    box-shadow: 0 -0.75rem 1.8rem color-mix(in srgb, var(--ink) 15%, transparent);
+    box-shadow: 0 -0.75rem 1.8rem
+      color-mix(in srgb, var(--ink) 15%, transparent);
   }
 
   .quick-nav {

@@ -5,10 +5,11 @@
   --paper: #f7f6f2;
   --panel: #ebeae4;
   --line: #c8cbc3;
-  --accent: #dc653d;
+  --accent: #bd4e2b;
   --accent-ink: #a74322;
-  --on-accent: #14211f;
+  --on-accent: #ffffff;
   --forest: #153e35;
+  --on-forest: #ffffff;
   --lime: #d3df92;
   --on-lime: #14211f;
   --on-ink: #ffffff;
@@ -41,6 +42,7 @@
   --accent-ink: #f1845c;
   --on-accent: #14211f;
   --forest: #17483c;
+  --on-forest: #ffffff;
   --lime: #d9eb99;
   --on-lime: #14211f;
   --on-ink: #14211f;
@@ -56,10 +58,11 @@
   --paper: #fff8ea;
   --panel: #f3e5bd;
   --line: #d8bd7f;
-  --accent: #bd5d32;
+  --accent: #a94c28;
   --accent-ink: #8f3c1e;
-  --on-accent: #000000;
+  --on-accent: #ffffff;
   --forest: #4a3a1d;
+  --on-forest: #ffffff;
   --lime: #edca62;
   --on-lime: #14211f;
   --on-ink: #ffffff;
@@ -67,6 +70,47 @@
   --project-index-bg: #f1d59c;
   --project-index-ink: #95431f;
   --detail-ink: #55452a;
+}
+
+:root[data-theme="ocean"] {
+  --ink: #102a43;
+  --ink-soft: #486581;
+  --paper: #f5f9fc;
+  --panel: #e4f0f4;
+  --line: #b8cbd7;
+  --accent: #b4471b;
+  --accent-ink: #8e3417;
+  --on-accent: #ffffff;
+  --forest: #0b5563;
+  --on-forest: #ffffff;
+  --lime: #b9e3dc;
+  --on-lime: #102a43;
+  --on-ink: #ffffff;
+  --company-ink: #0b5563;
+  --project-index-bg: #d8ebf2;
+  --project-index-ink: #7a2f15;
+  --detail-ink: #355569;
+}
+
+:root[data-theme="plum"] {
+  color-scheme: dark;
+  --ink: #f7f0f8;
+  --ink-soft: #cbc0cd;
+  --paper: #19131d;
+  --panel: #2a2130;
+  --line: #56485e;
+  --accent: #ff9c6b;
+  --accent-ink: #ffab80;
+  --on-accent: #231725;
+  --forest: #4a2e50;
+  --on-forest: #ffffff;
+  --lime: #dce8a6;
+  --on-lime: #231725;
+  --on-ink: #231725;
+  --company-ink: #dce8a6;
+  --project-index-bg: #3d2b3d;
+  --project-index-ink: #ffc0a0;
+  --detail-ink: #e3d7e4;
 }
 
 * {
@@ -210,6 +254,7 @@ h2 em {
 
 .button-primary:hover {
   background: var(--forest);
+  color: var(--on-forest);
 }
 
 .button-secondary {
@@ -231,8 +276,11 @@ h2 em {
   *,
   *::before,
   *::after {
+    /* biome-ignore lint/complexity/noImportantStyles: Reduced-motion preferences must override component-specific animations. */
     transition-duration: 0.01ms !important;
+    /* biome-ignore lint/complexity/noImportantStyles: Reduced-motion preferences must override component-specific animations. */
     animation-duration: 0.01ms !important;
+    /* biome-ignore lint/complexity/noImportantStyles: Reduced-motion preferences must override component-specific animations. */
     animation-iteration-count: 1 !important;
   }
 }

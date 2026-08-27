@@ -23,15 +23,7 @@
   .hero {
     min-height: auto;
 
-    grid-template-columns: 1fr;
-
     padding-block: 5rem 4rem;
-  }
-
-  .hero-aside {
-    max-width: 520px;
-
-    margin-top: 1rem;
   }
 
   .home-links {

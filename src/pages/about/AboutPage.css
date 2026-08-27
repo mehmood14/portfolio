@@ -177,7 +177,8 @@
 .about-personal-life article:hover {
   background: color-mix(in srgb, var(--panel) 62%, var(--paper));
 
-  box-shadow: 0 0.65rem 1.75rem color-mix(in srgb, var(--forest) 10%, transparent);
+  box-shadow: 0 0.65rem 1.75rem
+    color-mix(in srgb, var(--forest) 10%, transparent);
   transform: translateX(0.35rem);
 }
 

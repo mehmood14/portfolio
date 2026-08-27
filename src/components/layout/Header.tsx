@@ -14,22 +14,15 @@ const themeOptions = [
   { id: "light", label: "Light", icon: "☀" },
   { id: "dark", label: "Dark", icon: "◐" },
   { id: "amber", label: "Amber", icon: "✦" },
+  { id: "ocean", label: "Ocean", icon: "≈" },
+  { id: "plum", label: "Plum", icon: "☾" },
 ] as const;
 
 type Theme = (typeof themeOptions)[number]["id"];
 
 function getInitialTheme(): Theme {
   const savedTheme = localStorage.getItem("portfolio-theme");
-
-  if (
-    savedTheme === "light" ||
-    savedTheme === "dark" ||
-    savedTheme === "amber"
-  ) {
-    return savedTheme;
-  }
-
-  return "light";
+  return themeOptions.find((option) => option.id === savedTheme)?.id ?? "light";
 }
 
 export function Header(): JSX.Element {
@@ -141,7 +134,7 @@ export function Header(): JSX.Element {
             ref={themeTriggerRef}
             type="button"
             className="theme-trigger"
-            aria-label={`Current theme: ${currentTheme.label}`}
+            aria-label={`Current theme: ${currentTheme.label}. Choose a theme`}
             aria-expanded={themeMenuOpen}
             onClick={() => setThemeMenuOpen((open) => !open)}
           >
@@ -155,13 +148,14 @@ export function Header(): JSX.Element {
                 <button
                   key={option.id}
                   type="button"
-                  className={theme === option.id ? "is-active" : undefined}
+                  className={`theme-option theme-option--${option.id}${
+                    theme === option.id ? " is-active" : ""
+                  }`}
                   onClick={() => {
                     setTheme(option.id);
                     setThemeMenuOpen(false);
                   }}
                 >
-                  <span aria-hidden="true">{option.icon}</span>
                   <span>{option.label}</span>
                 </button>
               ))}

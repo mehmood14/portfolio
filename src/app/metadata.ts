@@ -73,16 +73,28 @@ function updateCanonical(url: string): void {
 export function usePageMetadata(pathname: string): void {
   useEffect(() => {
     const metadata = pageMetadata[pathname] ?? pageMetadata.notFound;
-    const siteUrl = (import.meta.env.VITE_SITE_URL || window.location.origin).replace(
-      /\/$/,
-      "",
-    );
+    const siteUrl = (
+      import.meta.env.VITE_SITE_URL || window.location.origin
+    ).replace(/\/$/, "");
     const pageUrl = new URL(pathname, `${siteUrl}/`).toString();
-    const imageUrl = new URL("/og-mehmood-ul-haq.png", `${siteUrl}/`).toString();
+    const imageUrl = new URL(
+      "/og-mehmood-ul-haq.png",
+      `${siteUrl}/`,
+    ).toString();
 
     document.title = metadata.title;
-    updateMeta('meta[name="description"]', "name", "description", metadata.description);
-    updateMeta('meta[property="og:title"]', "property", "og:title", metadata.title);
+    updateMeta(
+      'meta[name="description"]',
+      "name",
+      "description",
+      metadata.description,
+    );
+    updateMeta(
+      'meta[property="og:title"]',
+      "property",
+      "og:title",
+      metadata.title,
+    );
     updateMeta(
       'meta[property="og:description"]',
       "property",
@@ -91,7 +103,12 @@ export function usePageMetadata(pathname: string): void {
     );
     updateMeta('meta[property="og:url"]', "property", "og:url", pageUrl);
     updateMeta('meta[property="og:image"]', "property", "og:image", imageUrl);
-    updateMeta('meta[name="twitter:title"]', "name", "twitter:title", metadata.title);
+    updateMeta(
+      'meta[name="twitter:title"]',
+      "name",
+      "twitter:title",
+      metadata.title,
+    );
     updateMeta(
       'meta[name="twitter:description"]',
       "name",

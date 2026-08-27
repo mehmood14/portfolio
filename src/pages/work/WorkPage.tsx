@@ -32,7 +32,9 @@ function ProjectModal({
 
   useEffect(() => {
     const previouslyFocused =
-      document.activeElement instanceof HTMLElement ? document.activeElement : null;
+      document.activeElement instanceof HTMLElement
+        ? document.activeElement
+        : null;
 
     closeButtonRef.current?.focus();
 
@@ -86,14 +88,14 @@ function ProjectModal({
   }, [onClose]);
 
   return (
-    <div
-      className="project-modal-backdrop"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) {
-          onClose();
-        }
-      }}
-    >
+    <div className="project-modal-backdrop">
+      <button
+        type="button"
+        className="project-modal-dismiss"
+        onClick={onClose}
+        aria-label="Close project details"
+        tabIndex={-1}
+      />
       <div
         ref={dialogRef}
         className="project-modal"

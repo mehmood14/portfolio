@@ -463,6 +463,7 @@
 
 .project-modal {
   position: relative;
+  z-index: 1;
 
   width: min(880px, 100%);
   max-height: calc(100vh - 4rem);
@@ -477,6 +478,16 @@
   color: var(--ink);
 
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+}
+
+.project-modal-dismiss {
+  position: absolute;
+  inset: 0;
+
+  border: 0;
+
+  background: transparent;
+  cursor: default;
 }
 
 .project-modal-heading {

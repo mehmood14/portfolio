@@ -37,7 +37,10 @@ export function HomePage(): JSX.Element {
               Software engineer focused on thoughtful, maintainable product
               experiences.
             </p>
+          </div>
 
+          <div className="hero-actions-panel">
+            <p className="hero-actions-label">Start here</p>
             <div className="hero-actions">
               <Link className="button button-primary" to="/work">
                 View work <Arrow />
@@ -63,7 +66,7 @@ export function HomePage(): JSX.Element {
               </a>
             </div>
 
-            <div className="hero-resources" aria-label="Contact and downloads">
+            <nav className="hero-resources" aria-label="Downloads">
               <a
                 href="/downloads/MEHMOOD_RESUME.pdf"
                 download="MEHMOOD_RESUME.pdf"
@@ -76,52 +79,8 @@ export function HomePage(): JSX.Element {
               >
                 Portfolio <DownloadIcon />
               </a>
-            </div>
+            </nav>
           </div>
-
-          <aside className="hero-aside" aria-label="Engineering principles">
-            <div className="hero-aside-heading">
-              <p className="aside-label">How I like to work</p>
-              <h2>
-                Good products should feel easy to use, and easy to improve.
-              </h2>
-            </div>
-
-            <ol>
-              <li>
-                <span>01</span>
-                <div>
-                  <strong>Make things easier to follow</strong>
-                  <p>
-                    When a product has a lot going on, I try to give people a
-                    clear next step.
-                  </p>
-                </div>
-              </li>
-
-              <li>
-                <span>02</span>
-                <div>
-                  <strong>Don’t hide the messy bits</strong>
-                  <p>
-                    Loading, empty, and error states are part of the experience
-                    too.
-                  </p>
-                </div>
-              </li>
-
-              <li>
-                <span>03</span>
-                <div>
-                  <strong>Leave it better than I found it</strong>
-                  <p>
-                    Clear code and sensible boundaries make the next change less
-                    stressful.
-                  </p>
-                </div>
-              </li>
-            </ol>
-          </aside>
         </section>
 
         <section className="home-links section-shell">
@@ -142,6 +101,98 @@ export function HomePage(): JSX.Element {
             <h2>Beyond the code</h2>
             <Arrow />
           </Link>
+        </section>
+
+        <section
+          className="principles section-shell"
+          aria-labelledby="principles-title"
+        >
+          <div className="principles-heading">
+            <p className="eyebrow">How I like to work</p>
+            <div>
+              <h2 className="hero-title">
+                Good products should feel <em>easy to use</em>, and easy to
+                improve.
+              </h2>
+            </div>
+          </div>
+
+          <ol className="principles-list">
+            <li>
+              <span>01</span>
+              <div>
+                <strong>
+                  Understand the problem before choosing the solution
+                </strong>
+                <p>
+                  Clarify the user and business problem, constraints, and
+                  expected outcome before deciding on architecture or
+                  technology.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <span>02</span>
+              <div>
+                <strong>Prefer simple solutions first</strong>
+                <p>
+                  Avoid abstractions, dependencies, or state-management
+                  complexity until the problem actually requires them.
+                  Complexity should have a reason.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <span>03</span>
+              <div>
+                <strong>Make trade-offs explicit</strong>
+                <p>
+                  There is rarely one universally correct technical solution. I
+                  want to understand what we’re optimizing for and what we’re
+                  sacrificing.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <span>04</span>
+              <div>
+                <strong>Keep clear ownership and boundaries</strong>
+                <p>
+                  Components, services, APIs, and state should have
+                  understandable responsibilities. If one piece starts doing too
+                  much, that’s usually a signal to reconsider the boundary.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <span>05</span>
+              <div>
+                <strong>Build quality into delivery</strong>
+                <p>
+                  Think about testing, error states, edge cases, accessibility,
+                  observability, and failure modes while implementing, rather
+                  than treating them as cleanup afterward.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <span>06</span>
+              <div>
+                <strong>Improve incrementally</strong>
+                <p>
+                  I generally prefer safe, measurable improvements over
+                  unnecessary rewrites. Existing systems have constraints, and
+                  good engineering means improving them without destabilizing
+                  the product.
+                </p>
+              </div>
+            </li>
+          </ol>
         </section>
 
         <section className="confidentiality-note section-shell">

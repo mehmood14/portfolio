@@ -48,8 +48,8 @@ export function ContactPage(): JSX.Element {
             <p className="eyebrow">Get in touch</p>
             <h2>Let’s start a conversation.</h2>
             <p>
-              The easiest way to reach me is email. For a quick hello,
-              LinkedIn and phone work well too.
+              The easiest way to reach me is email. For a quick hello, LinkedIn
+              and phone work well too.
             </p>
           </div>
 
