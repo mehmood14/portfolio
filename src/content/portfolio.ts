@@ -22,7 +22,7 @@ export type Project = {
 export const projects: readonly Project[] = [
   {
     number: "01",
-    name: "Video analytics",
+    name: "IT & Network Analytics",
     company: "Hive Streaming",
     kind: "Enterprise analytics · Angular + GraphQL",
     summary:
@@ -78,7 +78,7 @@ export const projects: readonly Project[] = [
 
   {
     number: "02",
-    name: "Audience engagement analytics",
+    name: "Audience Engagement Analytics (Hive Focus)",
     company: "Hive Streaming",
     kind: "Privacy-aware product feature · Full stack",
     summary:
@@ -135,7 +135,7 @@ export const projects: readonly Project[] = [
 
   {
     number: "03",
-    name: "AI email assistant",
+    name: "AI Email Assistant (Hyperbrain)",
     company: "Hypertype",
     kind: "Product platform · React + Chrome extension",
     summary:
@@ -194,7 +194,7 @@ export const projects: readonly Project[] = [
 
   {
     number: "04",
-    name: "Robot & persona control",
+    name: "Robot & Persona Control (FurhatGPT)",
     company: "Furhat Robotics",
     kind: "Real-time interface · React + WebSockets",
     summary:
@@ -263,7 +263,7 @@ export type AdditionalProject = {
 export const additionalProjects: readonly AdditionalProject[] = [
   {
     company: "Hive Streaming",
-    name: "Headless content platform",
+    name: "Headless CMS Platform (KeystoneJS)",
     description:
       "Contributed to a structured CMS workflow that separates editorial updates from frontend releases, with role-aware administration and GraphQL content delivery.",
     technologies: "Keystone, TypeScript, NextAuth, PostgreSQL, Prisma, GraphQL",
@@ -297,7 +297,7 @@ export const additionalProjects: readonly AdditionalProject[] = [
 
   {
     company: "Mercurial Minds",
-    name: "Telecom operations portal",
+    name: "Telecom Operations Portal (Zong GMLC)",
     description:
       "Worked on a legacy Angular application for map-heavy operational workflows, bulk data handling, reporting, and multi-service integrations.",
     technologies: "Angular, RxJS, REST/SOAP, Highcharts, Google Maps",
@@ -334,7 +334,7 @@ export const additionalProjects: readonly AdditionalProject[] = [
 
   {
     company: "Mercurial Minds",
-    name: "Telecom service & campaign platform",
+    name: "Telecom Service & Campaign Platform (USSD)",
     description:
       "Contributed across a multi-portal Angular and Node.js platform for service configuration, campaign workflows, forms, data integrations, and domain boundaries.",
     technologies: "Angular, Node.js, Express, SQL, REST APIs",
