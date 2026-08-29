@@ -392,7 +392,7 @@ export function AboutPage(): JSX.Element {
 
               <footer>
                 <strong>Achilleas Stefanidis</strong>
-                <span>Engineering Teammate · Hive Streaming</span>
+                <span>Senior Data Engineer · Hive Streaming teammate</span>
               </footer>
             </blockquote>
 
