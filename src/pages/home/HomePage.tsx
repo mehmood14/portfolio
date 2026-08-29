@@ -153,6 +153,7 @@ export function HomePage(): JSX.Element {
         </section>
 
         <section
+          id="principles"
           className="principles section-shell"
           aria-labelledby="principles-title"
         >

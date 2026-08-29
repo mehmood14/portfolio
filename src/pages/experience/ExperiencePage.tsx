@@ -54,7 +54,11 @@ export function ExperiencePage(): JSX.Element {
         <section className="experience-page-bottom section-shell">
           <p className="eyebrow">Selected work</p>
 
-          <h2>Want to see what I’ve built?</h2>
+          <h2 className="hero-title">
+            Want to see what I've
+            <br />
+            <em>built?</em>
+          </h2>
 
           <Link className="button button-primary" to="/work">
             View selected work

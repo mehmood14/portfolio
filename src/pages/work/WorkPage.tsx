@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type JSX } from "react";
+import { Link } from "react-router-dom";
 import {
   projects,
   additionalProjects,
@@ -325,6 +326,21 @@ export function WorkPage(): JSX.Element {
             Project descriptions are intentionally generalized to respect
             client, company, and user confidentiality.
           </p>
+        </section>
+
+        <section className="work-page-bottom section-shell">
+          <p className="eyebrow">My approach</p>
+
+          <h2 className="hero-title">
+            Curious about how I
+            <br />
+            <em>approach problems?</em>
+          </h2>
+
+          <Link to="/#principles">
+            Check out my vision
+            <span aria-hidden="true">↗</span>
+          </Link>
         </section>
       </main>
 

@@ -77,6 +77,8 @@
 
 .experience-page-bottom {
   padding-block: clamp(5rem, 10vw, 8rem);
+
+  border-top: 1px solid var(--line);
 }
 
 .experience-page-bottom h2 {
