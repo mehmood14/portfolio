@@ -40,48 +40,95 @@ export function HomePage(): JSX.Element {
           </div>
 
           <div className="hero-actions-panel">
-            <p className="hero-actions-label">Start here</p>
-            <div className="hero-actions">
-              <Link className="button button-primary" to="/work">
-                View work <Arrow />
+            <div className="hero-personal-glance">
+              <div className="hero-personal-copy">
+                <p className="hero-personal-kicker">People &amp; moments</p>
+                <h3 className="hero-title hero-personal-title">
+                  There’s more to a <em>good teammate</em> than a tech stack.
+                </h3>
+              </div>
+
+              <div className="hero-sparkles" aria-hidden="true">
+                <span>✦</span>
+                <span>☻</span>
+                <span>✧</span>
+              </div>
+
+              <div className="hero-personal-tiles">
+                <Link
+                  to="/about"
+                  className="hero-personal-tile"
+                  aria-label="See more about my time with the Hypertype team"
+                >
+                  <img src="/images/hypertype1.jpeg" alt="" loading="lazy" />
+                  <span>Hypertype</span>
+                </Link>
+                <Link
+                  to="/about"
+                  className="hero-personal-tile"
+                  aria-label="See more about my time with the Hive Streaming team"
+                >
+                  <img src="/images/hive3.jpg" alt="" loading="lazy" />
+                  <span>Hive</span>
+                </Link>
+                <Link
+                  to="/about"
+                  className="hero-personal-tile"
+                  aria-label="See more about my time with the Furhat Robotics team"
+                >
+                  <img src="/images/furhat2.jpg" alt="" loading="lazy" />
+                  <span>Furhat</span>
+                </Link>
+              </div>
+
+              <Link className="hero-about-link" to="/about">
+                Learn More About Me <Arrow />
               </Link>
-
-              <a
-                className="hero-linkedin"
-                href="https://www.linkedin.com/in/mehmood-ul-haq"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span className="linkedin-mark" aria-hidden="true">
-                  <span>i</span>
-                  <span>n</span>
-                </span>
-
-                <span className="hero-linkedin-copy">
-                  <small>Connect on LinkedIn</small>
-                  <strong>Follow my professional journey</strong>
-                </span>
-
-                <Arrow />
-              </a>
             </div>
 
-            <nav className="hero-resources" aria-label="Downloads">
-              <a
-                href="/downloads/MEHMOOD_RESUME.pdf"
-                download="MEHMOOD_RESUME.pdf"
-              >
-                Résumé
-                <DownloadIcon />
-              </a>
-              <a
-                href="/downloads/MEHMOOD_PROJECTS_PORTFOLIO.pdf"
-                download="MEHMOOD_PROJECTS_PORTFOLIO.pdf"
-              >
-                Projects Portfolio
-                <DownloadIcon />
-              </a>
-            </nav>
+            <div className="hero-actions-suite">
+              <p className="hero-suite-label">Work &amp; credentials</p>
+              <div className="hero-actions">
+                <Link className="button button-primary" to="/work">
+                  View work <Arrow />
+                </Link>
+
+                <a
+                  className="hero-linkedin"
+                  href="https://www.linkedin.com/in/mehmood-ul-haq"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span className="linkedin-mark" aria-hidden="true">
+                    <span>i</span>
+                    <span>n</span>
+                  </span>
+
+                  <span className="hero-linkedin-copy">
+                    <small>Connect on LinkedIn</small>
+                  </span>
+
+                  <Arrow />
+                </a>
+              </div>
+
+              <nav className="hero-resources" aria-label="Downloads">
+                <a
+                  href="/downloads/MEHMOOD_RESUME.pdf"
+                  download="MEHMOOD_RESUME.pdf"
+                >
+                  Résumé
+                  <DownloadIcon />
+                </a>
+                <a
+                  href="/downloads/MEHMOOD_PROJECTS_PORTFOLIO.pdf"
+                  download="MEHMOOD_PROJECTS_PORTFOLIO.pdf"
+                >
+                  Projects Portfolio
+                  <DownloadIcon />
+                </a>
+              </nav>
+            </div>
           </div>
         </section>
 
@@ -110,7 +157,7 @@ export function HomePage(): JSX.Element {
           aria-labelledby="principles-title"
         >
           <div className="principles-heading">
-            <p className="eyebrow">How I like to work</p>
+            <p className="eyebrow">My vision</p>
             <div>
               <h2 className="hero-title">
                 Good products should feel <em>easy to use</em>, and easy to

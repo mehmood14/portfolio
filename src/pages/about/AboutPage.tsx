@@ -219,8 +219,9 @@ export function AboutPage(): JSX.Element {
             <div className="team-company-heading">
               <p className="company-name">Hive Streaming</p>
               <p>
-                A curious, collaborative team building video analytics products
-                — and making room for good company beyond the day-to-day.
+                Hive felt like a place where people cared deeply about the
+                product and still made time for each other. I valued how open,
+                supportive, and genuinely fun the team was to be part of.
               </p>
             </div>
 
@@ -264,8 +265,9 @@ export function AboutPage(): JSX.Element {
             <div className="team-company-heading">
               <p className="company-name">Hypertype</p>
               <p>
-                An early-stage team where ideas moved fast, feedback was open,
-                and every release taught us something new.
+                Hypertype gave me the energy of a small team figuring things out
+                together: moving quickly, sharing feedback honestly, and
+                learning by shipping.
               </p>
             </div>
 
@@ -298,8 +300,9 @@ export function AboutPage(): JSX.Element {
             <div className="team-company-heading">
               <p className="company-name">Furhat Robotics</p>
               <p>
-                A hands-on, playful team building a new control interface for
-                conversational robots.
+                Furhat felt wonderfully imaginative: ambitious people working on
+                something genuinely unusual, with enough trust and playfulness
+                to experiment in the open.
               </p>
             </div>
 

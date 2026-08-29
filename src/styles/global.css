@@ -128,6 +128,99 @@ body {
   line-height: 1.5;
 }
 
+/* Route changes should feel intentional without interrupting reading. */
+.page-transition {
+  isolation: isolate;
+  animation: page-enter 0.32s ease-out both;
+}
+
+.page-transition::before,
+.page-transition::after {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+
+  pointer-events: none;
+
+  content: "";
+}
+
+.page-transition::before {
+  width: 100%;
+  height: 3px;
+
+  background: color-mix(in srgb, var(--accent) 62%, transparent);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--lime) 65%, transparent);
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  animation: route-stroke 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.page-transition::after {
+  width: 0.45rem;
+  height: 0.45rem;
+
+  border-radius: 50%;
+
+  background: color-mix(in srgb, var(--lime) 72%, transparent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--paper) 78%, transparent);
+
+  animation: route-marker 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0.55;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes route-stroke {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  32% {
+    opacity: 0.58;
+  }
+
+  70% {
+    opacity: 0.58;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes route-marker {
+  0% {
+    opacity: 0;
+    transform: translateX(-0.5rem) scale(0.6);
+  }
+
+  32% {
+    opacity: 0.7;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(100vw) scale(0.8);
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -273,6 +366,15 @@ h2 em {
     scroll-behavior: auto;
   }
 
+  .page-transition {
+    animation: none;
+  }
+
+  .page-transition::before,
+  .page-transition::after {
+    animation: none;
+  }
+
   *,
   *::before,
   *::after {
@@ -282,6 +384,14 @@ h2 em {
     animation-duration: 0.01ms !important;
     /* biome-ignore lint/complexity/noImportantStyles: Reduced-motion preferences must override component-specific animations. */
     animation-iteration-count: 1 !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .page-transition::before,
+  .page-transition::after {
+    top: auto;
+    bottom: 0;
   }
 }
 /* Reduce top spacing on internal pages */

@@ -5,13 +5,13 @@ type PageMetadata = {
   title: string;
 };
 
-const portfolioTitle = "Mehmood ul Haq — Frontend Engineer";
+const portfolioTitle = "Mehmood ul Haq — Software Engineer";
 
 const pageMetadata: Record<string, PageMetadata> = {
   "/": {
     title: portfolioTitle,
     description:
-      "Portfolio of Mehmood ul Haq, a Frontend Engineer building thoughtful, reliable product experiences.",
+      "Portfolio of Mehmood ul Haq, a Software Engineer building thoughtful, reliable product experiences.",
   },
   "/work": {
     title: `Selected work | ${portfolioTitle}`,
@@ -21,17 +21,17 @@ const pageMetadata: Record<string, PageMetadata> = {
   "/experience": {
     title: `Experience | ${portfolioTitle}`,
     description:
-      "Professional experience in frontend engineering, product development, and cross-functional delivery.",
+      "Professional experience in software engineering, product development, and cross-functional delivery.",
   },
   "/about": {
     title: `About | ${portfolioTitle}`,
     description:
-      "Learn about Mehmood ul Haq's approach to frontend architecture, product thinking, and dependable engineering.",
+      "Learn about Mehmood ul Haq's approach to software architecture, product thinking, and dependable engineering.",
   },
   "/contact": {
     title: `Contact | ${portfolioTitle}`,
     description:
-      "Get in touch with Mehmood ul Haq about frontend, full-stack, and product-focused engineering opportunities.",
+      "Get in touch with Mehmood ul Haq about software, full-stack, and product-focused engineering opportunities.",
   },
   notFound: {
     title: `Page not found | ${portfolioTitle}`,
