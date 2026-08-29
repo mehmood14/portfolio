@@ -71,13 +71,15 @@ export function HomePage(): JSX.Element {
                 href="/downloads/MEHMOOD_RESUME.pdf"
                 download="MEHMOOD_RESUME.pdf"
               >
-                Résumé <DownloadIcon />
+                Résumé
+                <DownloadIcon />
               </a>
               <a
-                href="/downloads/MEHMOOD_PORTFOLIO.pdf"
-                download="MEHMOOD_PORTFOLIO.pdf"
+                href="/downloads/MEHMOOD_PROJECTS_PORTFOLIO.pdf"
+                download="MEHMOOD_PROJECTS_PORTFOLIO.pdf"
               >
-                Portfolio <DownloadIcon />
+                Projects Portfolio
+                <DownloadIcon />
               </a>
             </nav>
           </div>
