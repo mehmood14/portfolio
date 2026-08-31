@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import { AboutPage } from "../pages/about/AboutPage";
 import { ContactPage } from "../pages/contact/ContactPage";
 import { ExperiencePage } from "../pages/experience/ExperiencePage";
@@ -28,6 +29,7 @@ export function App() {
         </Routes>
       </div>
       <ScrollToTopButton />
+      <Analytics />
     </>
   );
 }
