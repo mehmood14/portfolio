@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { AboutPage } from "../pages/about/AboutPage";
 import { ContactPage } from "../pages/contact/ContactPage";
 import { ExperiencePage } from "../pages/experience/ExperiencePage";
@@ -28,6 +29,7 @@ export function App() {
         </Routes>
       </div>
       <ScrollToTopButton />
+      <SpeedInsights />
     </>
   );
 }
