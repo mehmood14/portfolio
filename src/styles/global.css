@@ -397,6 +397,7 @@ h2 em {
 /* Reduce top spacing on internal pages */
 
 .about-person-hero,
+.ai-page-hero,
 .experience-page-hero,
 .contact-page-hero,
 .work-page-hero {
@@ -405,6 +406,7 @@ h2 em {
 
 @media (max-width: 490px) {
   .about-person-hero,
+  .ai-page-hero,
   .experience-page-hero,
   .contact-page-hero,
   .work-page-hero {

@@ -1,6 +1,8 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { AboutPage } from "../pages/about/AboutPage";
+import { AiPage } from "../pages/ai/AiPage";
+import { EngineeringInvestigatorPage } from "../pages/ai/EngineeringInvestigatorPage";
 import { ContactPage } from "../pages/contact/ContactPage";
 import { ExperiencePage } from "../pages/experience/ExperiencePage";
 import { HomePage } from "../pages/home/HomePage";
@@ -21,6 +23,11 @@ export function App() {
       <div key={location.pathname} className="page-transition">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/ai" element={<AiPage />} />
+          <Route
+            path="/ai/engineering-investigator"
+            element={<EngineeringInvestigatorPage />}
+          />
           <Route path="/work" element={<WorkPage />} />
           <Route path="/experience" element={<ExperiencePage />} />
           <Route path="/about" element={<AboutPage />} />

@@ -4,6 +4,7 @@ import "./Header.css";
 
 const navigationItems = [
   { href: "/", label: "Home", icon: "⌂" },
+  { href: "/ai", label: "AI Lab", icon: "✦" },
   { href: "/work", label: "Projects", icon: "◇" },
   { href: "/experience", label: "Experience", icon: "↗" },
   { href: "/about", label: "About", icon: "☺" },

@@ -13,6 +13,16 @@ const pageMetadata: Record<string, PageMetadata> = {
     description:
       "Portfolio of Mehmood ul Haq, a Software Engineer building thoughtful, reliable product experiences.",
   },
+  "/ai": {
+    title: `AI Lab | ${portfolioTitle}`,
+    description:
+      "A collection of purpose-built AI agents for engineering work.",
+  },
+  "/ai/engineering-investigator": {
+    title: `AI Engineering Investigator | ${portfolioTitle}`,
+    description:
+      "An AI engineering investigation workspace for correlating deployments, metrics, logs, and code changes.",
+  },
   "/work": {
     title: `Selected work | ${portfolioTitle}`,
     description:
