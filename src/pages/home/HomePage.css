@@ -715,7 +715,7 @@
 
 .home-links {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
   border: 1px solid var(--line);
   border-radius: 1.2rem;
@@ -732,7 +732,7 @@
 .home-link-card {
   position: relative;
 
-  min-height: 320px;
+  min-height: 285px;
 
   padding: 2.1rem 2.2rem;
 
@@ -750,6 +750,18 @@
 
 .home-link-card:last-child {
   border-right: 0;
+}
+
+.home-link-card--ai {
+  background: color-mix(in srgb, var(--forest) 7%, var(--paper));
+}
+
+.home-link-card--ai::before {
+  background: var(--forest);
+}
+
+.home-link-card--ai .eyebrow {
+  color: var(--company-ink);
 }
 
 .home-link-card::before {
@@ -830,11 +842,9 @@
   position: relative;
   z-index: 1;
 
-  max-width: 320px;
-
   margin: 0;
 
-  font-size: clamp(2.4rem, 3.5vw, 4rem);
+  font-size: clamp(2rem, 2.5vw, 3.2rem);
   line-height: 0.95;
 }
 

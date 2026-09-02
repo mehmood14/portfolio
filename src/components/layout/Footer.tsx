@@ -50,7 +50,7 @@ export function Footer(): JSX.Element {
           <span aria-hidden="true">
             MUH<span>.</span>
           </span>
-          <p>© 2026 Mehmood ul Haq</p>
+          <p>© 2026 Mehmood Ul Haq</p>
         </div>
 
         <nav aria-label="Footer navigation">

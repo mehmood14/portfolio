@@ -1,4 +1,4 @@
-# Mehmood ul Haq — Portfolio
+# Mehmood Ul Haq — Portfolio
 
 A fast, content-first React and TypeScript portfolio designed for Vercel deployment.
 

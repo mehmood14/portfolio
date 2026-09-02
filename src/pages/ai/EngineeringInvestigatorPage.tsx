@@ -1,4 +1,4 @@
-import { useState, type FormEvent, type JSX } from "react";
+import { useRef, useState, type FormEvent, type JSX } from "react";
 import { Footer } from "../../components/layout/Footer";
 import { Header } from "../../components/layout/Header";
 import "./AiPage.css";
@@ -36,6 +36,27 @@ const initialStageStatuses: Record<InvestigationStage, StageStatus> = {
   code: "pending",
   findings: "pending",
 };
+
+function getTimelineStageStatuses(
+  completedStages: ReadonlySet<InvestigationStage>,
+): Record<InvestigationStage, StageStatus> {
+  const statuses = { ...initialStageStatuses };
+  let activeStageAssigned = false;
+
+  for (const stage of investigationStages) {
+    if (!activeStageAssigned && completedStages.has(stage.id)) {
+      statuses[stage.id] = "complete";
+      continue;
+    }
+
+    if (!activeStageAssigned) {
+      statuses[stage.id] = "active";
+      activeStageAssigned = true;
+    }
+  }
+
+  return statuses;
+}
 
 function InvestigationFindings({
   result,
@@ -163,10 +184,34 @@ function getInvestigationApiUrl(): string {
 function getStageForTool(tool: string): InvestigationStage | null {
   const normalizedTool = tool.toLowerCase();
 
-  if (normalizedTool.includes("deploy")) return "deployments";
-  if (normalizedTool.includes("metric")) return "metrics";
-  if (normalizedTool.includes("log")) return "logs";
-  if (normalizedTool.includes("code") || normalizedTool.includes("commit")) {
+  if (
+    normalizedTool.includes("deploy") ||
+    normalizedTool.includes("workflow") ||
+    normalizedTool.includes("action")
+  ) {
+    return "deployments";
+  }
+  if (
+    normalizedTool.includes("metric") ||
+    normalizedTool.includes("prometheus") ||
+    normalizedTool.includes("trace")
+  ) {
+    return "metrics";
+  }
+  if (
+    normalizedTool.includes("log") ||
+    normalizedTool.includes("observability")
+  ) {
+    return "logs";
+  }
+  if (
+    normalizedTool.includes("code") ||
+    normalizedTool.includes("commit") ||
+    normalizedTool.includes("repository") ||
+    normalizedTool.includes("github") ||
+    normalizedTool.includes("file") ||
+    normalizedTool.includes("diff")
+  ) {
     return "code";
   }
 
@@ -221,6 +266,7 @@ export function EngineeringInvestigatorPage(): JSX.Element {
   const [error, setError] = useState<string | null>(null);
   const [validationError, setValidationError] = useState<string | null>(null);
   const [stageStatuses, setStageStatuses] = useState(initialStageStatuses);
+  const completedStagesRef = useRef<Set<InvestigationStage>>(new Set());
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -246,7 +292,8 @@ export function EngineeringInvestigatorPage(): JSX.Element {
     setError(null);
     setValidationError(null);
     setStatus("loading");
-    setStageStatuses({ ...initialStageStatuses, deployments: "active" });
+    completedStagesRef.current = new Set();
+    setStageStatuses(getTimelineStageStatuses(completedStagesRef.current));
 
     try {
       const response = await fetch(getInvestigationApiUrl(), {
@@ -277,46 +324,16 @@ export function EngineeringInvestigatorPage(): JSX.Element {
         if (!streamEvent) return;
 
         if (streamEvent.type === "tool_started") {
-          const stage = getStageForTool(streamEvent.tool);
-          if (stage) {
-            setStageStatuses((current) => {
-              const next = { ...current };
-
-              for (const stageId of Object.keys(next) as InvestigationStage[]) {
-                if (next[stageId] === "active") {
-                  next[stageId] = "pending";
-                }
-              }
-
-              next[stage] = "active";
-              return next;
-            });
-          }
           return;
         }
 
         if (streamEvent.type === "tool_completed") {
           const stage = getStageForTool(streamEvent.tool);
           if (stage) {
-            setStageStatuses((current) => {
-              const next = { ...current, [stage]: "complete" };
-              const evidenceStages: InvestigationStage[] = [
-                "deployments",
-                "metrics",
-                "logs",
-                "code",
-              ];
-
-              if (
-                evidenceStages.every(
-                  (evidenceStage) => next[evidenceStage] === "complete",
-                )
-              ) {
-                next.findings = "active";
-              }
-
-              return next;
-            });
+            completedStagesRef.current.add(stage);
+            setStageStatuses(
+              getTimelineStageStatuses(completedStagesRef.current),
+            );
           }
           return;
         }
@@ -327,13 +344,10 @@ export function EngineeringInvestigatorPage(): JSX.Element {
 
         receivedResult = true;
         setResult(streamEvent.result);
-        setStageStatuses({
-          deployments: "complete",
-          metrics: "complete",
-          logs: "complete",
-          code: "complete",
-          findings: "complete",
-        });
+        completedStagesRef.current = new Set(
+          investigationStages.map((stage) => stage.id),
+        );
+        setStageStatuses(getTimelineStageStatuses(completedStagesRef.current));
         setStatus("complete");
       };
 

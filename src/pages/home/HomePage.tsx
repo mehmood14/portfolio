@@ -35,7 +35,7 @@ export function HomePage(): JSX.Element {
 
             <p className="hero-intro">
               Software engineer focused on thoughtful, maintainable product
-              experiences.
+              experiences and AI tools that make engineering work clearer.
             </p>
           </div>
 
@@ -133,9 +133,15 @@ export function HomePage(): JSX.Element {
         </section>
 
         <section className="home-links section-shell">
+          <Link to="/ai" className="home-link-card home-link-card--ai">
+            <span className="eyebrow">AI Lab</span>
+            <h2>AI Engineering Lab</h2>
+            <Arrow />
+          </Link>
+
           <Link to="/work" className="home-link-card">
             <span className="eyebrow">Work</span>
-            <h2>Selected projects</h2>
+            <h2>Project Case Studies</h2>
             <Arrow />
           </Link>
 

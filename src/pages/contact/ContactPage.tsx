@@ -70,7 +70,7 @@ export function ContactPage(): JSX.Element {
             >
               <span>LinkedIn</span>
               <span>
-                <strong>Mehmood ul Haq</strong>
+                <strong>Mehmood Ul Haq</strong>
                 <small>Connect and keep in touch</small>
               </span>
               <span aria-hidden="true">↗</span>
