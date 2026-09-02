@@ -4,6 +4,8 @@ A React, TypeScript, and Vite portfolio featuring selected product work, career 
 
 **Live site:** [https://mehmoodulhaq.vercel.app/](https://https://mehmoodulhaq.vercel.app//)
 
+<img width="1346" height="801" alt="image" src="https://github.com/user-attachments/assets/4dca79f2-4b8b-4e45-82d8-25b9ec1e31bf" />
+
 ## Highlights
 
 - Responsive portfolio pages for work, experience, about, and contact.
