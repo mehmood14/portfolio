@@ -90,7 +90,11 @@ export function HomePage(): JSX.Element {
               <p className="hero-suite-label">Work &amp; credentials</p>
               <div className="hero-actions">
                 <Link className="button button-primary" to="/work">
-                  View work <Arrow />
+                  Projects work <Arrow />
+                </Link>
+
+                <Link className="button button-secondary" to="/experience">
+                  Career Experience <Arrow />
                 </Link>
 
                 <a
@@ -117,14 +121,7 @@ export function HomePage(): JSX.Element {
                   href="/downloads/MEHMOOD_RESUME.pdf"
                   download="MEHMOOD_RESUME.pdf"
                 >
-                  Résumé
-                  <DownloadIcon />
-                </a>
-                <a
-                  href="/downloads/MEHMOOD_PROJECTS_PORTFOLIO.pdf"
-                  download="MEHMOOD_PROJECTS_PORTFOLIO.pdf"
-                >
-                  Projects Portfolio
+                  Download Résumé
                   <DownloadIcon />
                 </a>
               </nav>
