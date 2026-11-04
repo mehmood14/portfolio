@@ -374,7 +374,7 @@ export const additionalProjects: readonly AdditionalProject[] = [
 export const experience = [
   {
     period: "May 2024 — Present",
-    role: "Frontend Engineer",
+    role: "Full Stack Engineer",
     company: "Hive Streaming",
     description:
       "Building and modernizing enterprise video analytics with Angular and TypeScript. Work spans frontend architecture, reactive state, GraphQL services, rich visualizations, and quality practices.",
@@ -388,14 +388,14 @@ export const experience = [
   },
   {
     period: "Sep 2022 — May 2024",
-    role: "Software Engineer",
+    role: "Founding Engineer",
     company: "Hypertype",
     description:
       "First in-house engineer, contributing broadly across product development, frontend architecture, cloud services, product analytics, and technical planning.",
   },
   {
     period: "Feb 2021 — Jul 2022",
-    role: "Associate Full-Stack Engineer",
+    role: "Full Stack Engineer",
     company: "Mercurial Minds",
     description:
       "Led planning for a small engineering team while delivering Angular and Node.js features, REST APIs, data integrations, and predictable frontend state.",

@@ -25,7 +25,7 @@ export function HomePage(): JSX.Element {
         <section className="hero section-shell" aria-labelledby="hero-title">
           <div className="hero-copy">
             <p className="eyebrow">
-              Software Engineer · Frontend Focus · Stockholm, Sweden
+              Full Stack Software Engineer · Stockholm, Sweden
             </p>
 
             <h1 id="hero-title" className="hero-title">
